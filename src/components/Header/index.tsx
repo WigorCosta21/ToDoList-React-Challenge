@@ -1,11 +1,12 @@
 import { useTheme } from "../../hooks/useTheme";
 
+import { darkTheme } from "../../themes/dark";
+
 import MoonIcon from "../../assets/images/icon-moon.svg";
 import SunIcon from "../../assets/images/icon-sun.svg";
 
-import * as S from "./styles";
-import { darkTheme } from "../../themes/dark";
 import { Container } from "../../GlobaStyles";
+import * as S from "./styles";
 
 export const Header = () => {
   const { theme, toggleTheme } = useTheme();

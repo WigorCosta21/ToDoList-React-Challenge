@@ -1,8 +1,11 @@
+import { useState } from "react";
+
 import { useTask } from "../../hooks/useTask";
+
+import { Checkbox } from "../Checkbox";
+
 import { Container } from "../../GlobaStyles";
 import * as S from "./styles";
-import { useState } from "react";
-import { Checkbox } from "../Checkbox";
 
 export const Input = () => {
   const { addTask } = useTask();

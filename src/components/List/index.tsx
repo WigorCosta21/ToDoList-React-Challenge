@@ -1,23 +1,14 @@
 import { useTask } from "../../hooks/useTask";
-import { Container } from "../../GlobaStyles";
 
 import { Checkbox } from "../Checkbox";
 
 import RemoveTaskImg from "../../assets/images/icon-cross.svg";
 
+import { Container } from "../../GlobaStyles";
 import * as S from "./styles";
-import { useTaskFilter } from "../../hooks/useTaskFilter";
 
 export const List = () => {
   const { tasks, removeTask, toggleCheckedTask } = useTask();
-  const { filter } = useTaskFilter();
-
-  const filteredTasks = tasks.filter((task) => {
-    if (filter === "all") return true;
-    if (filter === "active") return !task.checked;
-    if (filter === "completed") return task.checked;
-    return true;
-  });
 
   const handleRemoveTask = (id: number) => {
     removeTask(id);
@@ -29,7 +20,7 @@ export const List = () => {
   return (
     <Container>
       <S.ListContainer>
-        {filteredTasks.map((task) => (
+        {tasks.map((task) => (
           <S.ListItem key={task.id}>
             <S.ContentList>
               <Checkbox

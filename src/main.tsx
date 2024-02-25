@@ -8,11 +8,11 @@ import { TaskFilterProvider } from "./context/FilterContext.tsx";
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <ThemeProvider>
-      <TaskProvider>
-        <TaskFilterProvider>
+      <TaskFilterProvider>
+        <TaskProvider>
           <App />
-        </TaskFilterProvider>
-      </TaskProvider>
+        </TaskProvider>
+      </TaskFilterProvider>
     </ThemeProvider>
   </React.StrictMode>
 );

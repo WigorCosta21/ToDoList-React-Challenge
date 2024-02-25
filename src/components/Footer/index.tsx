@@ -1,10 +1,11 @@
-import { Container } from "../../GlobaStyles";
 import { useTask } from "../../hooks/useTask";
 import { useTaskFilter } from "../../hooks/useTaskFilter";
+
+import { Container } from "../../GlobaStyles";
 import * as S from "./styles";
 
 export const Footer = () => {
-  const { tasks } = useTask();
+  const { tasks, clearChecked } = useTask();
   const { setFilter } = useTaskFilter();
   return (
     <Container>
@@ -21,7 +22,7 @@ export const Footer = () => {
             Completed
           </S.FilterItem>
         </S.FilterItems>
-        <S.ClearTask>Clear Completed</S.ClearTask>
+        <S.ClearTask onClick={clearChecked}>Clear Completed</S.ClearTask>
       </S.FooterContainer>
     </Container>
   );
