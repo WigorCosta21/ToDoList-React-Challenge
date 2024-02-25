@@ -1,5 +1,7 @@
 import React from "react";
 
+import CheckboxImg from "../../assets/images/icon-check.svg";
+
 import * as S from "./styles";
 
 interface ICheckboxProps {
@@ -17,7 +19,13 @@ export const Checkbox = ({ checked, onChange, id }: ICheckboxProps) => {
         type="checkbox"
         id={id}
       />
-      <S.Label htmlFor={id}></S.Label>
+      <S.Label htmlFor={id}>
+        <img
+          className={checked ? "imgChecked" : ""}
+          src={CheckboxImg}
+          alt="Ícone checked"
+        />
+      </S.Label>
     </S.CheckboxWrapper>
   );
 };

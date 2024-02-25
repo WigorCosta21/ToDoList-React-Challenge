@@ -26,6 +26,10 @@ export const ListItem = styled.li`
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
   }
+
+  @media (max-width: 600px) {
+    font-size: 0 0.75rem;
+  }
 `;
 
 export const BtnRemove = styled.button`

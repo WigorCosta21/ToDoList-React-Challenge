@@ -6,7 +6,7 @@ import * as S from "./styles";
 
 export const Footer = () => {
   const { tasks, clearChecked } = useTask();
-  const { setFilter } = useTaskFilter();
+  const { filter, setFilter } = useTaskFilter();
   return (
     <Container>
       <S.FooterContainer>
@@ -14,11 +14,22 @@ export const Footer = () => {
           {tasks.length} item{tasks.length <= 1 ? "" : "s"}
         </S.QuantityItems>
         <S.FilterItems>
-          <S.FilterItem onClick={() => setFilter("all")}>All</S.FilterItem>
-          <S.FilterItem onClick={() => setFilter("active")}>
+          <S.FilterItem
+            data-active={filter === "all"}
+            onClick={() => setFilter("all")}
+          >
+            All
+          </S.FilterItem>
+          <S.FilterItem
+            data-active={filter === "active"}
+            onClick={() => setFilter("active")}
+          >
             Active
           </S.FilterItem>
-          <S.FilterItem onClick={() => setFilter("completed")}>
+          <S.FilterItem
+            data-active={filter === "completed"}
+            onClick={() => setFilter("completed")}
+          >
             Completed
           </S.FilterItem>
         </S.FilterItems>

@@ -5,6 +5,7 @@ declare module "styled-components" {
     textPrimary: string;
     textSecondary: string;
     textTitle: string;
+    textHover: string;
     bgPrimary: string;
     border: string;
     bgSecondary: string;

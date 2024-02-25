@@ -7,6 +7,7 @@ export const darkTheme: ITheme = {
   textTitle: "#FAFAFA",
   textComplet: "#777992",
   border: "#D1D2DA",
+  textHover: "#FAFAFA",
   bgPrimary: "#161721",
   bgSecondary: "#39394b",
   bgImgDesktop: HeroImgDesktop,

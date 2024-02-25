@@ -6,6 +6,7 @@ export const lightTheme: ITheme = {
   textSecondary: "#33354B",
   textTitle: "#FAFAFA",
   textComplet: "#D1D2DA",
+  textHover: "#000000",
   border: "#D1D2DA",
   bgPrimary: "#F9F9F9",
   bgSecondary: "#E3E4FA",

@@ -3,6 +3,7 @@ declare interface ITheme {
   textSecondary: string;
   textTitle: string;
   textComplet: string;
+  textHover: string;
   border: string;
   bgPrimary: string;
   bgSecondary: string;

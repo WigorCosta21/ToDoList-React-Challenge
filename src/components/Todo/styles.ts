@@ -7,4 +7,8 @@ export const Hero = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
+  @media (max-width: 600px) {
+    background-image: url(${(props) => props.theme.bgImgMobile});
+  }
 `;
