@@ -1,6 +1,7 @@
-import { ReactNode, createContext, useState } from "react";
+import { ReactNode, createContext } from "react";
 import { darkTheme } from "../themes/dark";
 import { lightTheme } from "../themes/light";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 
 export interface IThemeContext {
   theme: ITheme;
@@ -14,10 +15,14 @@ interface IThemeProviderProps {
 export const ThemeContext = createContext<IThemeContext>({} as IThemeContext);
 
 export const ThemeProvider = ({ children }: IThemeProviderProps) => {
-  const [theme, setTheme] = useState<ITheme>(darkTheme);
+  const { value: theme, updateLocalStore } = useLocalStorage<ITheme>(
+    "@theme",
+    darkTheme
+  );
 
   const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === darkTheme ? lightTheme : darkTheme));
+    const newTheme = theme === darkTheme ? lightTheme : darkTheme;
+    updateLocalStore(newTheme);
   };
 
   return (

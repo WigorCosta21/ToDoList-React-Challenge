@@ -1,4 +1,5 @@
-import { ReactNode, createContext, useState } from "react";
+import { ReactNode, createContext } from "react";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 
 export interface ITaskContext {
   tasks: ITask[];
@@ -14,22 +15,26 @@ interface ITaskProviderProps {
 export const TaskContext = createContext<ITaskContext>({} as ITaskContext);
 
 export const TaskProvider = ({ children }: ITaskProviderProps) => {
-  const [tasks, setTasks] = useState<ITask[]>([]);
+  const { value: tasks, updateLocalStore } = useLocalStorage<ITask[]>(
+    "@tasks",
+    []
+  );
 
   const addTask = (task: ITask) => {
-    setTasks([...tasks, task]);
+    const newTask = [...tasks, task];
+    updateLocalStore(newTask);
   };
 
   const removeTask = (id: number) => {
-    setTasks(tasks.filter((taks) => taks.id !== id));
+    const newTask = tasks.filter((task) => task.id !== id);
+    updateLocalStore(newTask);
   };
 
   const toggleCheckedTask = (id: number) => {
-    setTasks(
-      tasks.map((task) =>
-        task.id === id ? { ...task, checked: !task.checked } : task
-      )
+    const newTask = tasks.map((task) =>
+      task.id == id ? { ...task, checked: !task.checked } : task
     );
+    updateLocalStore(newTask);
   };
 
   return (
