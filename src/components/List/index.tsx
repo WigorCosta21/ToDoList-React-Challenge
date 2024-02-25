@@ -14,12 +14,6 @@ export const List = () => {
             <img src={RemoveTaskImg} alt="Ícone X" />
           </S.BtnRemove>
         </S.ListItem>
-        <S.ListItem>
-          <span>JavaScript</span>
-          <S.BtnRemove>
-            <img src={RemoveTaskImg} alt="Ícone X" />
-          </S.BtnRemove>
-        </S.ListItem>
       </S.ListContainer>
     </Container>
   );
