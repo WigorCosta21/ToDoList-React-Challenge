@@ -3,6 +3,7 @@ import { ReactNode, createContext, useState } from "react";
 export interface ITaskContext {
   tasks: ITask[];
   addTask: (task: ITask) => void;
+  removeTask: (id: number) => void;
 }
 
 interface ITaskProviderProps {
@@ -18,8 +19,12 @@ export const TaskProvider = ({ children }: ITaskProviderProps) => {
     setTasks([...tasks, task]);
   };
 
+  const removeTask = (id: number) => {
+    setTasks(tasks.filter((taks) => taks.id !== id));
+  };
+
   return (
-    <TaskContext.Provider value={{ tasks, addTask }}>
+    <TaskContext.Provider value={{ tasks, addTask, removeTask }}>
       {children}
     </TaskContext.Provider>
   );

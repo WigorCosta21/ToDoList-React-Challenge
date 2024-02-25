@@ -1,11 +1,16 @@
 import { Container } from "../../GlobaStyles";
+import { useTask } from "../../hooks/useTask";
 import * as S from "./styles";
 
 export const Footer = () => {
+  const { tasks } = useTask();
+
   return (
     <Container>
       <S.FooterContainer>
-        <S.QuantityItems>5 items</S.QuantityItems>
+        <S.QuantityItems>
+          {tasks.length} item{tasks.length <= 1 ? "" : "s"}
+        </S.QuantityItems>
         <S.FilterItems>
           <S.FilterItem>All</S.FilterItem>
           <S.FilterItem>Active</S.FilterItem>
