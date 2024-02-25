@@ -11,7 +11,7 @@ export const Title = styled.h1`
   font-size: 2rem;
   font-weight: bold;
   text-transform: uppercase;
-  color: ${(props) => props.theme.textSecondary};
+  color: ${(props) => props.theme.textTitle};
 `;
 
 export const BntTheme = styled.button`

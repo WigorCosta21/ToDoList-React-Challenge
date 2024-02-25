@@ -3,9 +3,10 @@ import HeroImgMobile from "../assets/images/bg-mobile-light.jpg";
 
 export const lightTheme: ITheme = {
   textPrimary: "##9293A4",
-  textSecondary: "#FAFAFA",
+  textSecondary: "#33354B",
+  textTitle: "#FAFAFA",
   textComplet: "#D1D2DA",
-  textHover: "#33354B",
+  border: "#D1D2DA",
   bgPrimary: "#F9F9F9",
   bgSecondary: "#E3E4FA",
   bgImgDesktop: HeroImgDesktop,
