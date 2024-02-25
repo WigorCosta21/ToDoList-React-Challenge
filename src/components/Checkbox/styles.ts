@@ -29,6 +29,11 @@ export const Label = styled.label`
     &.imgChecked {
       display: block;
     }
+
+    @media (max-width: 600px) {
+      top: 6px;
+      left: 5px;
+    }
   }
 
   &::before {
