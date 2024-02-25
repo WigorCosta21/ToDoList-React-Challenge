@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
     * {
@@ -13,4 +13,10 @@ export const GlobalStyles = createGlobalStyle`
         height: 100vh;
         background-color: ${(props) => props.theme.bgPrimary};
     }
+`;
+
+export const Container = styled.div`
+  max-width: 540px;
+  width: 100%;
+  margin: 0 auto;
 `;
