@@ -1,7 +1,10 @@
+import { GlobalStyles } from "./GlobaStyles";
+
 export const App = () => {
   return (
-    <div>
+    <>
+      <GlobalStyles />
       <h1>Todo</h1>
-    </div>
+    </>
   );
 };
