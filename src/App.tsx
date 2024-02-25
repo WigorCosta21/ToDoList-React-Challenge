@@ -1,6 +1,7 @@
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./GlobaStyles";
 import { useTheme } from "./hooks/useTheme";
+import { Todo } from "./components/Todo";
 
 export const App = () => {
   const { theme } = useTheme();
@@ -8,6 +9,7 @@ export const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
+      <Todo />
     </ThemeProvider>
   );
 };

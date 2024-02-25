@@ -9,5 +9,8 @@ export const GlobalStyles = createGlobalStyle`
 
     body{
         font-family: "Josefin Sans", sans-serif;
+        width: 100vw;
+        height: 100vh;
+        background-color: ${(props) => props.theme.bgPrimary};
     }
 `;
