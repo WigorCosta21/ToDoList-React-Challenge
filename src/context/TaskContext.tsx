@@ -4,6 +4,7 @@ export interface ITaskContext {
   tasks: ITask[];
   addTask: (task: ITask) => void;
   removeTask: (id: number) => void;
+  toggleCheckedTask: (id: number) => void;
 }
 
 interface ITaskProviderProps {
@@ -23,8 +24,18 @@ export const TaskProvider = ({ children }: ITaskProviderProps) => {
     setTasks(tasks.filter((taks) => taks.id !== id));
   };
 
+  const toggleCheckedTask = (id: number) => {
+    setTasks(
+      tasks.map((task) =>
+        task.id === id ? { ...task, checked: !task.checked } : task
+      )
+    );
+  };
+
   return (
-    <TaskContext.Provider value={{ tasks, addTask, removeTask }}>
+    <TaskContext.Provider
+      value={{ tasks, addTask, removeTask, toggleCheckedTask }}
+    >
       {children}
     </TaskContext.Provider>
   );

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const ListContainer = styled.ul`
+  width: 100%;
   margin-top: 24px;
 `;
 
@@ -31,4 +32,11 @@ export const BtnRemove = styled.button`
   border: none;
   background: transparent;
   cursor: pointer;
+`;
+
+export const ContentList = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 `;

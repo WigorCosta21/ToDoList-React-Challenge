@@ -43,6 +43,7 @@ export const Input = () => {
           onKeyUp={handleKeyPressEnter}
         />
         <Checkbox
+          id="checkbox-add"
           checked={checkedInput}
           onChange={(e) => setCheckedInput(e.target.checked)}
         />
