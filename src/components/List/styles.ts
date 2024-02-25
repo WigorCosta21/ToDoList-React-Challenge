@@ -15,6 +15,12 @@ export const ListItem = styled.li`
   justify-content: space-between;
   border-bottom: 1px solid ${(props) => props.theme.border};
 
+  span {
+    &.checked {
+      text-decoration: line-through;
+    }
+  }
+
   &:first-child {
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;

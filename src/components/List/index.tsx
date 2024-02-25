@@ -17,7 +17,7 @@ export const List = () => {
       <S.ListContainer>
         {tasks.map((task) => (
           <S.ListItem key={task.id}>
-            <span>{task.task}</span>
+            <span className={task.checked ? "checked" : ""}>{task.task}</span>
             <S.BtnRemove onClick={() => handleRemoveTask(task.id)}>
               <img src={RemoveTaskImg} alt="Ícone X" />
             </S.BtnRemove>
